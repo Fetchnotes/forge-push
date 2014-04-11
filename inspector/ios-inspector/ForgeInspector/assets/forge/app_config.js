@@ -1,0 +1,1 @@
+window.forge = {}; window.forge.config = {"modules": {"push": {"version": "0.1", "config": {}}, "inspector": {"version": "1.0"}}}; window.forge.module_mapping = {"push": "push", "inspector": "inspector"};
