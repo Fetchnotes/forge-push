@@ -1,11 +1,24 @@
 // Expose the native API to javascript
 forge.push = {
-    showAlert: function (text, success, error) {
-        forge.internal.call('push.showAlert', {text: text}, success, error);
+    // Events
+    'onPushNotificationReceived': {
+        'addListener': function (success) {
+           forge.internal.addEventListener("push.pushNotificationReceived", success);
+        }
+    },
+    'onPushNotificationReceivedForeground': {
+        'addListener': function (success) {
+           forge.internal.addEventListener("push.pushNotificationReceivedForeground", success);
+        }
+    },
+    'onPushNotificationReceivedBackground': {
+        'addListener': function (success) {
+           forge.internal.addEventListener("push.pushNotificationReceivedBackground", success);
+        }
+    },
+    'onDidRegisterWithAPNS': {
+        'addListener': function (success) {
+            forge.internal.addEventListener("push.didRegisterWithAPNS", success);
+        }
     }
-};
-
-// Register for our native event
-forge.internal.addEventListener("push.resume", function () {
-	alert("Welcome back!");
-});
+}
