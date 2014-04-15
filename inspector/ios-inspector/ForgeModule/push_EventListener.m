@@ -4,11 +4,10 @@
 
 + (void)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [ForgeLog d:@"[FETCHNOTES] didFinishLaunchingWithOptions"];
-    
-    if ([launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"]) {
-        [ForgeLog d:@"[FETCHNOTES] Received Push Notification while not running"];
-        [[ForgeApp sharedApp] event:@"sqlite.pushNotificationReceived" withParam:launchOptions];
+    NSDictionary *userInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        if (userInfo) {
+            [ForgeLog d:@"[FETCHNOTES] Received Push Notification while closed"];
+            [[ForgeApp sharedApp] event:@"push.pushNotificationReceivedWhileClosed" withParam:userInfo];
     }
 }
 
@@ -19,7 +18,7 @@
     NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
     token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-    [[ForgeApp sharedApp] event:@"sqlite.didRegisterWithAPNS" withParam:token];
+    [[ForgeApp sharedApp] event:@"push.didRegisterWithAPNS" withParam:token];
 }
 
 + (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
@@ -35,10 +34,10 @@
     if (state == UIApplicationStateActive)
     {
         [ForgeLog d:@"[FETCHNOTES] Received Push Notification while in foreground"];
-        [[ForgeApp sharedApp] event:@"sqlite.pushNotificationReceivedForeground" withParam:userInfo];
+        [[ForgeApp sharedApp] event:@"push.pushNotificationReceivedForeground" withParam:userInfo];
     } else {
         [ForgeLog d:@"[FETCHNOTES] Received Push Notification while in background"];
-        [[ForgeApp sharedApp] event:@"sqlite.pushNotificationReceivedBackground" withParam:userInfo];
+        [[ForgeApp sharedApp] event:@"push.pushNotificationReceivedBackground" withParam:userInfo];
     }
 }
 

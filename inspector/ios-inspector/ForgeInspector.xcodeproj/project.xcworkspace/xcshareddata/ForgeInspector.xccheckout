@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>34EB3579-20E6-4086-8722-7531AC0CF8C8</string>
+	<string>59F8F0F9-A716-4969-8CF5-8A609942EAF3</string>
 	<key>IDESourceControlProjectName</key>
 	<string>ForgeInspector</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>1679AA0C-56CA-480A-80FA-9F11F0282FCB</key>
+		<key>43C1CDC3-6C2E-4716-A8D8-B353A0E9CE2B</key>
 		<string>https://github.com/Fetchnotes/forge-push.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>inspector/ios-inspector/ForgeInspector.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>1679AA0C-56CA-480A-80FA-9F11F0282FCB</key>
+		<key>43C1CDC3-6C2E-4716-A8D8-B353A0E9CE2B</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1679AA0C-56CA-480A-80FA-9F11F0282FCB</string>
+	<string>43C1CDC3-6C2E-4716-A8D8-B353A0E9CE2B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1679AA0C-56CA-480A-80FA-9F11F0282FCB</string>
+			<string>43C1CDC3-6C2E-4716-A8D8-B353A0E9CE2B</string>
 			<key>IDESourceControlWCCName</key>
 			<string>push</string>
 		</dict>

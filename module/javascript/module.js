@@ -1,9 +1,9 @@
 // Expose the native API to javascript
 forge.push = {
     // Events
-    'onPushNotificationReceived': {
+    'onPushNotificationReceivedWhileClosed': {
         'addListener': function (success) {
-           forge.internal.addEventListener("push.pushNotificationReceived", success);
+           forge.internal.addEventListener("push.pushNotificationReceivedWhileClosed", success);
         }
     },
     'onPushNotificationReceivedForeground': {

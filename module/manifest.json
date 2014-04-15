@@ -1,7 +1,7 @@
 {
-    "description": "My module template", 
-    "min_platform_version": "v2.1.5", 
-    "namespace": "push", 
-    "platform_version": "v2.1.5", 
-    "version": "0.1"
+    "description": "only bg",
+    "min_platform_version": "v2.1.5",
+    "namespace": "push",
+    "platform_version": "v2.1.5",
+    "version": "0.2.1"
 }

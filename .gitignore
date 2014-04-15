@@ -163,3 +163,7 @@ inspector/ios-inspector/ForgeModule/ForgeModule.xcodeproj/project.pbxproj
 inspector/ios-inspector/ForgeModule/ForgeModule.xcodeproj/xcshareddata/xcschemes/ForgeModule.xcscheme
 inspector/ios-inspector/ForgeModule/ForgeModule.xcodeproj/xcshareddata/xcschemes/ForgeModuleResources.xcscheme
 inspector/ios-inspector/ForgeInspector.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+ForgeInspector.xcodeproj/project.xcworkspace/xcuserdata/horak.xcuserdatad/UserInterfaceState.xcuserstate
+inspector/ios-inspector/ForgeInspector.xcodeproj/project.xcworkspace/*
+inspector/ios-inspector/ForgeInspector.xcodeproj/xcuserdata/*
+
