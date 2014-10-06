@@ -3,5 +3,6 @@
     "min_platform_version": "v2.2.2",
     "namespace": "push",
     "platform_version": "v2.2.2",
-    "version": "0.3"
+    "changes": "iOS 8 compatibility",
+    "version": "0.9"
 }
