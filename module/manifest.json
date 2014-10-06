@@ -1,7 +1,7 @@
 {
-    "description": "only bg",
-    "min_platform_version": "v2.1.5",
+    "description": "ios 8 compatibility",
+    "min_platform_version": "v2.2.2",
     "namespace": "push",
-    "platform_version": "v2.1.5",
-    "version": "0.2.1"
+    "platform_version": "v2.2.2",
+    "version": "0.3"
 }
