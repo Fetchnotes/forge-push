@@ -45,30 +45,6 @@ def add_element_to_xml(build_params, file, element, to=None, unless=None):
 		el.append(new_el)
 		xml.write(file)
 
-def add_attributes_to_xml(build_params, file, attributes, to):
-	'''add attributes to elements in an XML file
-
-	:param file: filename or file object
-	:param attributes: dict containing attributes
-	:param to: sub element tag name or path we will append attributes to
-	'''
-
-	ns = "{http://schemas.android.com/apk/res/android}"
-	xml = ElementTree.ElementTree()
-	xml.parse(file)
-	if to is None:
-		el = xml.getroot()
-	else:
-		el = xml.find(to, dict((v, k) for k, v in ElementTree._namespace_map.items()))
-	for attribute in attributes:
-		if isinstance(attributes[attribute], str) or isinstance(attributes[attribute], unicode):
-			attributes[attribute] = pystache.render(attributes[attribute], build_params['app_config'])
-		if attribute.replace("android:", ns, 1) in el.attrib:
-			el.attrib[attribute.replace("android:", ns, 1)] = attributes[attribute]
-		else:
-			el.attrib[attribute] = attributes[attribute]
-	xml.write(file)
-
 def add_to_json_array(build_params, filename, key, value):
 	if isinstance(value, str) or isinstance(value, unicode):
 		value = pystache.render(value, build_params['app_config'])
@@ -118,23 +94,11 @@ def android_add_to_application_manifest(build_params, element):
 		element=element,
 		to="application")
 
-def android_add_to_application_manifest_attributes(build_params, attributes):
-		add_attributes_to_xml(build_params,
-			file='AndroidManifest.xml',
-			attributes=attributes,
-			to="application")
-
 def android_add_to_activity_manifest(build_params, element):
 	add_element_to_xml(build_params,
 		file='AndroidManifest.xml',
 		element=element,
 		to="application/activity")
-
-def android_add_to_activity_manifest_attributes(build_params, attributes):
-		add_attributes_to_xml(build_params,
-			file='AndroidManifest.xml',
-			attributes=attributes,
-			to="application/activity")
 
 def android_add_to_manifest(build_params, element):
 	add_element_to_xml(build_params,
