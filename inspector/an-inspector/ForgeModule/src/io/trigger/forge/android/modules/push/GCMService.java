@@ -5,6 +5,7 @@ import io.trigger.forge.android.core.ForgeApp;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 
 import com.google.gson.JsonPrimitive;
 import com.kinvey.android.push.KinveyGCMService;
@@ -18,14 +19,12 @@ public class GCMService extends KinveyGCMService {
 
 	@Override
 	public void onDelete(String arg0) {
-		// TODO Auto-generated method stub
-
+		Log.i(TAG, arg0);
 	}
 
 	@Override
 	public void onError(String arg0) {
-		// TODO Auto-generated method stub
-
+		Log.e(TAG, arg0);
 	}
 
 	@Override
@@ -36,18 +35,18 @@ public class GCMService extends KinveyGCMService {
 
 	@Override
 	public void onRegistered(String arg0) {
-		// TODO Auto-generated method stub
+		Log.i(TAG, arg0);
 
 	}
 
 	@Override
 	public void onUnregistered(String arg0) {
-		// TODO Auto-generated method stub
+		Log.i(TAG, arg0);
 
 	}
 	private void displayNotification(String message){
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
-            //.setSmallIcon(R.drawable.ic_launcher)
+            .setSmallIcon(R.drawable.icons)
             .setContentTitle("Fetchnotes")
             .setContentText(message);
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
