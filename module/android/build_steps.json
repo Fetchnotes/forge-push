@@ -1,0 +1,109 @@
+[
+	{
+		"do": {
+			"android_add_permission": {
+				"permission": "android.permission.INTERNET"
+			}
+		}
+	},
+	{
+		"do": {
+			"android_add_permission": {
+				"permission": "android.permission.ACCESS_NETWORK_STATE"
+			}
+		}
+	},
+	{
+		"do": {
+			"android_add_permission": {
+				"permission": "android.permission.VIBRATE"
+			}
+		}
+	},
+	{
+		"do": {
+			"android_add_permission": {
+				"permission": "android.permission.WAKE_LOCK"
+			}
+		}
+	},
+	{
+		"do": {
+			"android_add_permission": {
+				"permission": "com.google.android.c2dm.permission.RECEIVE"
+			}
+		}
+	},
+	{
+		"do": {
+			"android_add_permission": {
+				"permission": "android.permission.BROADCAST_STICKY"
+			}
+		}
+	},
+	{
+		"do": {
+			"android_add_to_application_manifest": {
+				"element": {
+					"tag": "permission",
+					"attributes": {
+						"android:name": "io.trigger.forge.android.modules.push.permission.C2D_MESSAGE",
+    					"android:protectionLevel": "signature"
+					}
+				}
+			}
+		}
+	},
+	{
+		"do": {
+			"android_add_permission": {
+				"permission": "io.trigger.forge.android.modules.push.permission.C2D_MESSAGE"
+			}
+		}
+	},
+	{
+		"do": {
+			"android_add_to_application_manifest": {
+				"element": {
+					"tag": "receiver",
+					"attributes": {
+						"android:name": "io.trigger.forge.android.modules.push.GCMReceiver",
+						"android:permission": "com.google.android.c2dm.permission.SEND"
+					},
+					"children": [{
+						"tag": "intent-filter",
+						"children": [{
+							"tag": "action",
+							"attributes": {
+								"android:name": "com.google.android.c2dm.intent.RECEIVE"
+							}
+						}, {
+							"tag": "action",
+							"attributes": {
+								"android:name": "com.google.android.c2dm.intent.REGISTRATION"
+							}
+						}, {
+							"tag": "category",
+							"attributes": {
+								"android:name": "io.trigger.forge.android.modules.push"
+							}
+						}]
+					}]
+				}
+			}
+		}
+	},
+	{
+		"do": {
+			"android_add_to_application_manifest": {
+				"element": {
+					"tag": "service",
+					"attributes": {
+						"android:name": "io.trigger.forge.android.modules.push.GCMService",
+						"android:label": "Push Notification Service"
+					}
+				}
+			}
+		}
+	}
+]
