@@ -21,7 +21,7 @@ public class API {
 			task.success(regid);
 			isRegistered = true;
 			task.success(regid);
-			ForgeApp.event("onDidRegisterWithAPNS", new JsonPrimitive(regid));
+			ForgeApp.event("push.didRegisterWithAPNS", new JsonPrimitive(regid));
 		} catch (IOException e) {
 			task.error(e.getMessage());
 		}
