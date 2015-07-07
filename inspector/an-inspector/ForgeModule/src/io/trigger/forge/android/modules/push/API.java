@@ -15,13 +15,13 @@ public class API {
 	public static void registerWithAPNS(final ForgeTask task){
 		final GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(ForgeApp.getApp());
 		try {
-			String senderID = ForgeApp.getApp().getString(R.string.gcm_senderid);
+			String senderID = ForgeApp.configForPlugin("push").get("gcm-sender-id").getAsString();
 			//TODO: the register method is deprecated
 			String regid = gcm.register(senderID);
 			task.success(regid);
 			isRegistered = true;
 			task.success(regid);
-			ForgeApp.event("push.didRegisterWithAPNS", new JsonPrimitive(regid));
+			ForgeApp.event("onDidRegisterWithAPNS", new JsonPrimitive(regid));
 		} catch (IOException e) {
 			task.error(e.getMessage());
 		}

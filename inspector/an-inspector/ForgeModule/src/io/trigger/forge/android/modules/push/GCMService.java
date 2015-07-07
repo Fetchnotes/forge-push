@@ -11,7 +11,7 @@ import com.google.gson.JsonPrimitive;
 import com.kinvey.android.push.KinveyGCMService;
 
 public class GCMService extends KinveyGCMService {
-	
+		
 	@Override
 	public Class getReceiver() {
 		return GCMReceiver.class;
@@ -46,7 +46,7 @@ public class GCMService extends KinveyGCMService {
 	}
 	private void displayNotification(String message){
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
-            .setSmallIcon(R.drawable.icons)
+            .setSmallIcon(ForgeApp.getResourceId("icons", "drawable"))
             .setContentTitle("Fetchnotes")
             .setContentText(message);
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
