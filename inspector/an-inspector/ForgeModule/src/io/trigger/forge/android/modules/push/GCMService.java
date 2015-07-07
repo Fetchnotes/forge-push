@@ -50,7 +50,7 @@ public class GCMService extends KinveyGCMService {
             .setContentTitle("Fetchnotes")
             .setContentText(message);
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        mNotificationManager.notify(1, mBuilder.build());
+        mNotificationManager.notify(1, mBuilder.getNotification());
     }
 
 }
