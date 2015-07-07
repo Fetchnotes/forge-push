@@ -2,16 +2,17 @@ package io.trigger.forge.android.modules.push;
 
 import io.trigger.forge.android.core.ForgeApp;
 
-import android.app.NotificationManager;
-import android.content.Context;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonPrimitive;
+import com.google.gson.JsonSyntaxException;
 import com.kinvey.android.push.KinveyGCMService;
 
 public class GCMService extends KinveyGCMService {
-		
+	
+	private static final Gson gson = new Gson();
+
 	@Override
 	public Class getReceiver() {
 		return GCMReceiver.class;
@@ -29,7 +30,13 @@ public class GCMService extends KinveyGCMService {
 
 	@Override
 	public void onMessage(String message) {
-		displayNotification(message);
+		Notification notification;
+		try {
+			notification = gson.fromJson(message, Notification.class);
+		} catch (JsonSyntaxException e) {
+			notification = new Notification(message);
+		}
+		notification.show();
 		ForgeApp.event("push.message", new JsonPrimitive(message));
 	}
 
@@ -44,13 +51,5 @@ public class GCMService extends KinveyGCMService {
 		Log.i(TAG, arg0);
 
 	}
-	private void displayNotification(String message){
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
-            .setSmallIcon(ForgeApp.getResourceId("icons", "drawable"))
-            .setContentTitle("Fetchnotes")
-            .setContentText(message);
-        NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        mNotificationManager.notify(1, mBuilder.getNotification());
-    }
 
 }
