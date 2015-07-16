@@ -146,6 +146,7 @@ module/tests*
 
 .DS_Store
 .trigger
+.lib
 
 inspector/ios-inspector/.hash
 inspector/ios-inspector/.DS_Store
@@ -157,7 +158,7 @@ inspector/ios-inspector/ForgeInspector.xcodeproj/project.pbxproj
 inspector/ios-inspector/ForgeInspector.xcodeproj/project.xcworkspace/xcshareddata/ForgeInspector.xccheckout
 inspector/ios-inspector.*
 inspector/*an
-inspector/an-inspector
+inspector/an-inspector.*
 inspector/ios-inspector/ForgeModule/ForgeModule-Prefix.pch
 inspector/ios-inspector/ForgeModule/ForgeModule.xcodeproj/project.pbxproj
 inspector/ios-inspector/ForgeModule/ForgeModule.xcodeproj/xcshareddata/xcschemes/ForgeModule.xcscheme
