@@ -50,6 +50,7 @@ public class PushMessage {
             .setSmallIcon(ForgeApp.getResourceId("icons", "drawable"))
 			.setDefaults(Notification.DEFAULT_VIBRATE)
 			.setContentIntent(pendingIntent)
+			.setAutoCancel(true)
             .setContentTitle(from)
             .setContentText(message);
         NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
