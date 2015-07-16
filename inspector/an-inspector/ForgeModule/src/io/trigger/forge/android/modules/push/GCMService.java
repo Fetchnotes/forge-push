@@ -30,11 +30,11 @@ public class GCMService extends KinveyGCMService {
 
 	@Override
 	public void onMessage(String message) {
-		Notification notification;
+		PushMessage notification;
 		try {
-			notification = gson.fromJson(message, Notification.class);
+			notification = gson.fromJson(message, PushMessage.class);
 		} catch (JsonSyntaxException e) {
-			notification = new Notification(message);
+			notification = new PushMessage(message);
 		}
 		notification.show();
 		ForgeApp.event("push.message", new JsonPrimitive(message));
