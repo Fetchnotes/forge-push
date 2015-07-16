@@ -146,6 +146,7 @@ module/tests*
 .DS_Store
 .trigger
 .hash
+.lib
 
 inspector/ios-inspector/.DS_Store
 inspector/ios-inspector/ForgeCore.bundle
