@@ -46,15 +46,15 @@ public class PushMessage {
 		Context context = ForgeApp.getApp();
 		Intent intent = new Intent(context, ForgeApp.getActivity().getClass());
 		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context)
-            .setSmallIcon(ForgeApp.getResourceId("icons", "drawable"))
+		NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context)
+			.setSmallIcon(ForgeApp.getResourceId("icons", "drawable"))
 			.setDefaults(Notification.DEFAULT_VIBRATE)
 			.setContentIntent(pendingIntent)
 			.setAutoCancel(true)
-            .setContentTitle(from)
-            .setContentText(message);
-        NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        mNotificationManager.notify(1, mBuilder.getNotification());
-    }
+			.setContentTitle(from)
+			.setContentText(message);
+		NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+		mNotificationManager.notify(1, mBuilder.getNotification());
+	}
 	
 }
