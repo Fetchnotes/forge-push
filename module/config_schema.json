@@ -1,0 +1,12 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "gcm-sender-id": {
+            "type": "string",
+            "required": true,
+            "description": "Sender ID for Google Cloud Messaging (GCM)",
+            "pattern": "^\\d{12}$"
+        }
+    }
+}

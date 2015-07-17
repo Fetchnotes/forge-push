@@ -1,8 +1,8 @@
 {
-    "description": "ios 8 compatibility",
-    "min_platform_version": "v2.2.2",
-    "namespace": "push",
-    "platform_version": "v2.2.2",
-    "changes": "iOS 8 compatibility",
-    "version": "0.9"
+	"description": "Enable push notifications",
+	"min_platform_version": "v2.2.2",
+	"namespace": "push",
+	"platform_version": "v2.2.2",
+	"changes": "Remove iOS, add partial Android support",
+	"version": "1.0.9"
 }
