@@ -18,7 +18,6 @@ public class API {
 			String senderID = ForgeApp.configForPlugin("push").get("gcm-sender-id").getAsString();
 			//TODO: the register method is deprecated
 			String regid = gcm.register(senderID);
-			task.success(regid);
 			isRegistered = true;
 			task.success(regid);
 			ForgeApp.event("onDidRegisterWithAPNS", new JsonPrimitive(regid));
